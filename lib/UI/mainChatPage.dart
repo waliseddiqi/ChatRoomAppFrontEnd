@@ -21,7 +21,8 @@ class MainChatPage extends StatelessWidget{
             
 
             appBar: AppBar(
-
+              
+              title: Text("Main room",style: TextStyle(fontSize: size.height/45,color: Colors.white),),
             ),
 
             body: SingleChildScrollView(
@@ -60,7 +61,7 @@ class MessageTextField extends ViewModelWidget<SocketConnectViewModel>{
     Size size = MediaQuery.of(context).size;
 
     return Padding(
-      padding:  EdgeInsets.all(size.height/180),
+      padding:  EdgeInsets.all(size.height/360),
       child: Container(
           margin: EdgeInsets.only(bottom: size.height/75),
          height: size.height/9,
@@ -98,6 +99,7 @@ class MessageTextField extends ViewModelWidget<SocketConnectViewModel>{
                         //viewModel.addfakeMEssage(viewModel.sendField.text.toString());
                         viewModel.sendMessage(viewModel.sendField.text.toString());
                         viewModel.addfakeMEssage(viewModel.sendField.text.toString());
+                        viewModel.sendField.clear();
                       },
                       child: Center(child: Icon(Icons.send,color: Colors.white,))
                     ),

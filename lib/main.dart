@@ -1,7 +1,10 @@
 import 'package:chatrooms/UI/pickNamePage.dart';
+import 'package:chatrooms/locator.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked_services/stacked_services.dart';
 
-void main() {
+void main()async {
+    await setUpLocator();
   runApp(MyApp());
 }
 
@@ -16,6 +19,8 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.orange,
       ),
+      navigatorKey: StackedService.navigatorKey,
+      
       home: PickNamePage()
     );
   }
